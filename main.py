@@ -44,7 +44,7 @@ class Game:
     def print_result(self)-> None:
         print(f"Correct answers is: {self.list_of_statistic.count(1)} of {len(self.list_of_statistic)}")
 
-    def add_statistic_to_list(self)-> None:
+    def check_and_add_statistic_to_list(self)-> None:
         if self.user_answer == self.answer:
             self.list_of_statistic.append(1)
         else:
@@ -121,7 +121,7 @@ class Practice(Game):
             self.random_number()
             self.answer = self.number_one * self.random_number_form_1_to_9    
             self.user_input_error_handling_practis()
-            self.add_statistic_to_list()
+            self.check_and_add_statistic_to_list()
             i = i + 1
     
         self.print_result()
@@ -139,7 +139,7 @@ class Exam(Game):
             self.second_random_number = self.random_number_form_1_to_9
             self.answer = self.first_random_number * self.second_random_number
             self.user_input_error_handling_exam()
-            self.add_statistic_to_list()
+            self.check_and_add_statistic_to_list()
             i = i + 1
         self.print_result()
         self.pass_or_fail()
