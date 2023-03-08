@@ -22,18 +22,18 @@ class Game:
         
 
     def greeting(self)-> None:
-        user_choice_practis_or_exam = input(f"Welcome {name.capitalize()} to practice multiplication tables,\nPlease enter 1 to practice or 2 to exam:")
+        user_choice_practice_or_exam = input(f"Welcome {name.capitalize()} to practice multiplication tables,\nPlease enter 1 to practice or 2 to exam:")
         while True:
-            if user_choice_practis_or_exam == '1':
-                logging.info(f'User {name} choice practis')
+            if user_choice_practice_or_exam == '1':
+                logging.info(f'User {name} choice practice')
                 Practice(self.name).practice()
                 break
-            elif user_choice_practis_or_exam == '2':
+            elif user_choice_practice_or_exam == '2':
                 logging.info(f'User {name} choice exam')
                 Exam(self.name).exam()
                 break
             else:
-                user_choice_practis_or_exam = input("Enter 1 to practice or 2 to exam:")
+                user_choice_practice_or_exam = input("Enter 1 to practice or 2 to exam:")
             
     
     def random_number(self)-> int:
@@ -90,17 +90,17 @@ class Game:
     def input_number_multiplication_choice_practice(self)-> None:
         while True:
             try:  
-                self.number_one = int(input(f'WELCOME {name.upper()} TO PRACTIS:\nPlease enter number(1 - 9) to practice the multiplication table: '))
+                self.number_one = int(input(f'WELCOME {name.upper()} TO PRACTICE:\nPlease enter number(1 - 9) to practice the multiplication table: '))
                 if self.number_one in range(1,9):
                     break
             except ValueError:
                 print('Enter correct nuber from 1 to 9 to practice the multiplication table!!!')
     
-    def input_tasks_nuber_practis(self)-> None:
+    def input_tasks_nuber_practice(self)-> None:
         while True:
             try:
-                self.time_of_practis = int(input(f"Ok, how many task's do you need to practis multiplication table from {self.number_one}? "))
-                if int(self.time_of_practis) in range(1,30):
+                self.time_of_practice = int(input(f"Ok, how many task's do you need to practice multiplication table from {self.number_one}? "))
+                if int(self.time_of_practice) in range(1,30):
                     break
                 else:
                     print("Choice is not correct, maximum tasks are 30")  
@@ -114,10 +114,10 @@ class Practice(Game):
         
     def practice(self)-> None:
         self.input_number_multiplication_choice_practice()
-        self.input_tasks_nuber_practis()
+        self.input_tasks_nuber_practice()
 
         i = 0  
-        while i < self.time_of_practis:
+        while i < self.time_of_practice:
             self.random_number()
             self.answer = self.number_one * self.random_number_form_1_to_9    
             self.user_input_error_handling_practis()
