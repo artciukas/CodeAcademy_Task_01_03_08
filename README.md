@@ -1,3 +1,3 @@
-# CodeAcademy_Task_01_03_08
-# Multiplication table practice
-# To start program, execute main.py file.
+
+This is a program to multiplication table practice from idvidual number and exam.
+To start program, execute `python main.py`

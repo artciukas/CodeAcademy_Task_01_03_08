@@ -1,9 +1,4 @@
 
-"""
-
-"""
-
-
 import logging
 import random_numbers_module
 
@@ -90,7 +85,7 @@ class Game:
     def input_number_multiplication_choice_practice(self)-> None:
         while True:
             try:  
-                self.number_one = int(input(f'WELCOME {name.upper()} TO PRACTICE:\nPlease enter number(1 - 9) to practice the multiplication table: '))
+                self.number_one = int(input(f'WELCOME {name.upper()} TO PRACTICE:\nPlease enter number (1 - 9) to practice the multiplication table: '))
                 if self.number_one in range(1,9):
                     break
             except ValueError:
@@ -108,14 +103,11 @@ class Game:
                 print('Please enter task number from 1 to 30')
                 
 
-
-
 class Practice(Game):
         
     def practice(self)-> None:
         self.input_number_multiplication_choice_practice()
         self.input_tasks_nuber_practice()
-
         i = 0  
         while i < self.time_of_practice:
             self.random_number()
@@ -123,7 +115,6 @@ class Practice(Game):
             self.user_input_error_handling_practis()
             self.check_and_add_statistic_to_list()
             i = i + 1
-    
         self.print_result()
         self.user_continue_or_exit()
       
@@ -144,7 +135,6 @@ class Exam(Game):
         self.print_result()
         self.pass_or_fail()
         logging.info('Exam function is DONE!!!')
-
 
 
 def user_name_input()-> str:
