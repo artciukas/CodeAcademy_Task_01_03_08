@@ -6,8 +6,6 @@ def random_number():
     return random_number_form_1_to_9
 
 
-
-
 if __name__ == "__main__":
     print('Test')
     print(f'Testing code: {random_number()}')
