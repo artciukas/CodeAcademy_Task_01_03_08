@@ -21,11 +21,11 @@ class Game:
         while True:
             if user_choice_practice_or_exam == '1':
                 logging.info(f'User {name} choice practice')
-                Practice(self.name).practice()
+                Practice(self.name).run()
                 break
             elif user_choice_practice_or_exam == '2':
                 logging.info(f'User {name} choice exam')
-                Exam(self.name).exam()
+                Exam(self.name).run()
                 break
             else:
                 user_choice_practice_or_exam = input("Enter 1 to practice or 2 to exam:")
@@ -74,10 +74,10 @@ class Game:
         while True:    
             self.continue_or_exit = input('If you want to continue pactice, enter 1\nIf you are ready for the exam, enter 2\nTo exit press any button...')
             if self.continue_or_exit == "1":
-                Practice(self.name).practice()
+                Practice(self.name).run()
                 break
             elif self.continue_or_exit == "2":
-                Exam(self.name).exam()
+                Exam(self.name).run()
                 break
             else:
                 break
@@ -105,7 +105,7 @@ class Game:
 
 class Practice(Game):
         
-    def practice(self)-> None:
+    def run(self)-> None:
         self.input_number_multiplication_choice_practice()
         self.input_tasks_nuber_practice()
         i = 0  
@@ -120,7 +120,7 @@ class Practice(Game):
       
         
 class Exam(Game):
-    def exam(self)-> None:
+    def run(self)-> None:
         print(f'Welcome {name} to exam,\nGOODLUCK!!!')
         i = 0  
         while i < 10:
